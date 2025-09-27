@@ -1,15 +1,16 @@
-import { cn } from '@/utils/util';
+'use client';
+
+import LocalStorage from '@/components/LocalStorage';
+import { useReducer } from 'react';
 
 export default function Home() {
+  const [state] = useReducer((state, action) => {
+    return state;
+  }, {});
+
   return (
-    <div
-      className={cn(
-        'flex h-20 w-20 items-center justify-center',
-        'm-auto mt-4 bg-amber-50',
-        'drop-shadow-md drop-shadow-neutral-700'
-      )}
-    >
-      Home
+    <div className="flex-center-col w-2/3 border border-black p-2">
+      <LocalStorage keyName="name" initialValue={''} />
     </div>
   );
 }
