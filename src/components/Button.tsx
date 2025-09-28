@@ -1,4 +1,5 @@
 import { cva, VariantProps } from 'class-variance-authority';
+import { useFormStatus } from 'react-dom';
 
 const buttonStyles = cva(
   'rounded-lg font-semibold transition-colors focus:outline-none focus:ring-2',
@@ -26,9 +27,11 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof buttonStyles>;
 
 const Button = ({ intent, size, className, children, ...props }: ButtonProps) => {
+  const { pending } = useFormStatus();
+
   return (
     <button className={buttonStyles({ intent, size, className })} {...props}>
-      {children}
+      {pending ? 'waiting..' : children}
     </button>
   );
 };

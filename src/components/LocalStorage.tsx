@@ -1,3 +1,5 @@
+'use client';
+
 import Button from '@/components/Button';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { useDeferredValue, useEffect, useRef } from 'react';
@@ -55,7 +57,7 @@ const LocalStorage = ({
             setLocalName(inputRef?.current?.value || '');
           }}
         >
-          Save
+          Save Local
         </Button>
       </form>
       <div className="w-full">{}</div>
