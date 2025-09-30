@@ -1,5 +1,10 @@
+'use client';
+
 import Counter from '@/components/Counter';
+import Todos from '@/components/Todos';
+import { todoClient } from '@/redux/todoQueries';
 import { cn } from '@/utils/util';
+import { QueryClientProvider } from '@tanstack/react-query';
 
 export default function Home() {
   return (
@@ -11,6 +16,9 @@ export default function Home() {
       )}
     >
       <Counter />
+      <QueryClientProvider client={todoClient}>
+        <Todos />
+      </QueryClientProvider>
     </div>
   );
 }
