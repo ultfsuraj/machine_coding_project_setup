@@ -1,9 +1,13 @@
 import { postApi } from '@/redux/postApi';
+import { taskSlice } from '@/redux/taskSlice';
+import { userSlice } from '@/redux/userSlice';
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 export const store = configureStore({
   reducer: {
+    tasks: taskSlice.reducer,
+    users: userSlice.reducer,
     [postApi.reducerPath]: postApi.reducer,
   },
   devTools: process.env.NODE_ENV !== 'production',
