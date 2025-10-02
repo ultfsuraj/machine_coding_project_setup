@@ -1,5 +1,6 @@
 'use client';
 
+import FileUpload from '@/components/FileUpload';
 import { useRef, useState } from 'react';
 
 const tableData = [
@@ -63,6 +64,9 @@ const DragDrop = () => {
       </div>
 
       {/* file upload */}
+      <div className="flex gap-4 bg-cyan-100 p-4">
+        <FileUpload />
+      </div>
     </div>
   );
 };
