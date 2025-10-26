@@ -28,9 +28,9 @@ const Dropdown = ({
     onSelect(selectedItems);
   }, [selectedItems]);
 
-  useEffect(() => {
-    optionsRefs.current = containerRef.current?.children;
-  }, searchResults);
+  // useEffect(() => {
+  //   optionsRefs.current = containerRef.current?.children;
+  // }, searchResults);
 
   const onKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'ArrowDown') {
