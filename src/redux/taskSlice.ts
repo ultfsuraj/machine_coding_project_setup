@@ -16,7 +16,8 @@ export const taskSlice = createSlice({
     addTask: () => {},
   },
   extraReducers: (builder) => {
-    (builder.addCase(fetchTasks.rejected, () => {}), builder.addCase(removeUser, () => {}));
+    builder.addCase(fetchTasks.rejected, () => {});
+    builder.addCase(removeUser, () => {});
   },
 });
 
